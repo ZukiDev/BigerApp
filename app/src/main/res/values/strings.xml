@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">BigerApp</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="register_prompt">Don\'t have an account? Register now!</string>
+    <string name="login_prompt">Already have an account? Login here!</string>
+    <string name="headingLogin">Welcome back,</string>
+    <string name="heading2Login">Let\'s start now !</string>
+    <string name="heading3Login">Enter your credentials to continue.</string>
+    <string name="headingRegister">Hello,</string>
+    <string name="heading2Register">Let\'s join us !</string>
+    <string name="heading3Register">Create an account to get started.</string>
+    <string name="register">Register</string>
+    <string name="username">Username</string>
+</resources>

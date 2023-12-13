@@ -1,0 +1,128 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:paddingStart="35dp"
+    android:paddingEnd="35dp"
+    android:paddingTop="40dp"
+    android:paddingBottom="16dp"
+    tools:context=".view.login.LoginActivity">
+
+    <TextView
+        android:id="@+id/tvLoginHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bold"
+        android:text="@string/headingLogin"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tvLoginHeading2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvLoginHeading"
+        android:text="@string/heading2Login"
+        android:layout_marginTop="-14dp"
+        android:textSize="40sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:fontFamily="@font/extra_bold" />
+
+    <TextView
+        android:id="@+id/tvLoginHeading3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvLoginHeading2"
+        android:text="@string/heading3Login"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/regular" />
+
+    <LinearLayout
+        android:id="@+id/layoutEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvLoginHeading3"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:startIconDrawable="@drawable/ic_email">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layoutEmail"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:startIconDrawable="@drawable/ic_lock"
+            app:endIconMode="password_toggle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/password"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layoutPassword"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/rounded_button_bg"
+        android:textColor="#FFFFFF"
+        android:text="@string/login"
+        android:textSize="16sp"
+        android:fontFamily="@font/semi_bold"/>
+
+    <TextView
+        android:id="@+id/tvRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="30dp"
+        android:clickable="true"
+        android:fontFamily="@font/regular"
+        android:text="@string/register_prompt"
+        android:textColor="@color/black" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+</RelativeLayout>
