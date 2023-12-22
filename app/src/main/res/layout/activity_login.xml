@@ -10,10 +10,19 @@
     android:paddingBottom="16dp"
     tools:context=".view.login.LoginActivity">
 
+    <ImageView
+        android:id="@+id/loginVector"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/vector_login">
+    </ImageView>
+
     <TextView
         android:id="@+id/tvLoginHeading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/loginVector"
         android:fontFamily="@font/bold"
         android:text="@string/headingLogin"
         android:textColor="@color/colorPrimaryDark"
@@ -45,7 +54,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvLoginHeading3"
-        android:layout_marginTop="16dp"
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout

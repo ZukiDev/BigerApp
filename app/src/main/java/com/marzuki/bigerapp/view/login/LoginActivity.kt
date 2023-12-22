@@ -9,29 +9,20 @@ import android.text.TextPaint
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
 import android.text.style.ForegroundColorSpan
+import android.util.Log
 import android.view.View
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import com.google.android.material.snackbar.Snackbar
 import com.marzuki.bigerapp.R
-import com.marzuki.bigerapp.data.model.LoginResponse
-import com.marzuki.bigerapp.data.network.ApiConfig
-import com.marzuki.bigerapp.data.network.ApiService
 import com.marzuki.bigerapp.data.pref.UserModel
 import com.marzuki.bigerapp.databinding.ActivityLoginBinding
 import com.marzuki.bigerapp.view.ViewModelFactory
-import com.marzuki.bigerapp.view.main.MainActivity
+import com.marzuki.bigerapp.view.main.DashboardActivity
 import com.marzuki.bigerapp.view.register.RegisterActivity
-import com.marzuki.bigerapp.view.register.RegisterViewModel
 import kotlinx.coroutines.launch
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
     private val viewModel by viewModels<LoginViewModel> {
@@ -120,22 +111,21 @@ class LoginActivity : AppCompatActivity() {
                 progressBar.visibility = View.VISIBLE
 
                 val response = viewModel.login(email, password)
+                Log.d("LoginActivity", "Received username: ${response?.userDetail?.username}")
                 if (response != null && response.success == true) {
                     val token: String = response.token.toString()
                     viewModel.saveSession(UserModel(email, token))
 
                     showAlertDialog("Login Successful") {
-                        val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                        val intent = Intent(this@LoginActivity, DashboardActivity::class.java)
                         startActivity(intent)
                         finish()
                     }
                 } else {
-//                    val errorMessage = response?.message.toString()
-
                     showAlertDialog("Invalid Email and Password")
                 }
             } catch (e: Exception) {
-                showAlertDialog("An error occurred")
+                showAlertDialog("Login Failed")
                 e.printStackTrace()
             } finally {
                 progressBar.visibility = View.GONE

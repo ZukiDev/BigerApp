@@ -9,11 +9,20 @@
     android:paddingEnd="35dp"
     android:paddingTop="40dp"
     android:paddingBottom="16dp"
-    tools:context=".view.login.LoginActivity">
+    tools:context=".view.register.RegisterActivity">
+
+    <ImageView
+        android:id="@+id/regisVector"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/vector_login">
+    </ImageView>
 
     <TextView
         android:id="@+id/tvRegisterHeading"
         android:layout_width="wrap_content"
+        android:layout_below="@id/regisVector"
         android:layout_height="30dp"
         android:fontFamily="@font/bold"
         android:text="@string/headingRegister"
@@ -37,7 +46,6 @@
         android:layout_below="@id/tvRegisterHeading2"
         android:text="@string/heading3Register"
         android:textSize="18sp"
-        android:layout_marginTop="24dp"
         android:textColor="@color/black"
         android:fontFamily="@font/regular" />
 
@@ -46,7 +54,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvRegisterHeading3"
-        android:layout_marginTop="16dp"
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
@@ -105,9 +112,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:boxStrokeColor="@color/colorPrimary"
-            android:outlineSpotShadowColor="@color/colorPrimary"
-            android:outlineAmbientShadowColor="@color/colorPrimary"
             app:startIconDrawable="@drawable/ic_lock"
             app:endIconMode="password_toggle">
 
@@ -131,6 +135,7 @@
         android:background="@drawable/rounded_button_bg"
         android:textColor="#FFFFFF"
         android:text="@string/register"
+        android:textSize="16sp"
         android:fontFamily="@font/semi_bold"/>
 
     <TextView

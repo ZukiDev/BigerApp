@@ -6,9 +6,6 @@ import com.marzuki.bigerapp.data.model.LoginResponse
 import com.marzuki.bigerapp.data.network.ApiConfig
 import com.marzuki.bigerapp.data.pref.UserModel
 import com.marzuki.bigerapp.data.repository.UserRepository
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class LoginViewModel(
