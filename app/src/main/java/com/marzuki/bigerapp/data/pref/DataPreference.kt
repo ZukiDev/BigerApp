@@ -16,28 +16,14 @@ class DataPreference private constructor(private val dataStore: DataStore<Prefer
 
     suspend fun saveData(user: DataModel) {
         dataStore.edit { preferences ->
-            preferences[ADDRESS] = user.address
-            preferences[ROUTE] = user.route
-            preferences[LEVEL_5] = user.administrative_area_level_5
-            preferences[LEVEL_4] = user.administrative_area_level_4
-            preferences[LEVEL_3] = user.administrative_area_level_3
-            preferences[LEVEL_2] = user.administrative_area_level_2
-            preferences[LEVEL_1] = user.administrative_area_level_1
-            preferences[POSTAL_CODE] = user.postal_code
+            preferences[FORMATTED_ADDRESS] = user.formattedAddress
         }
     }
 
     fun getData(): Flow<DataModel> {
         return dataStore.data.map { preferences ->
             DataModel(
-                preferences[ADDRESS] ?: "",
-                preferences[ROUTE] ?: "",
-                preferences[LEVEL_5] ?: "",
-                preferences[LEVEL_4] ?: "",
-                preferences[LEVEL_3] ?: "",
-                preferences[LEVEL_2] ?: "",
-                preferences[LEVEL_1] ?: "",
-                preferences[POSTAL_CODE] ?: 0,
+                preferences[FORMATTED_ADDRESS] ?: ""
             )
         }
     }
@@ -52,14 +38,7 @@ class DataPreference private constructor(private val dataStore: DataStore<Prefer
         @Volatile
         private var INSTANCE: DataPreference? = null
 
-        private val ADDRESS = stringPreferencesKey("address")
-        private val ROUTE = stringPreferencesKey("route")
-        private val LEVEL_5 = stringPreferencesKey("dusun")
-        private val LEVEL_4 = stringPreferencesKey("desa")
-        private val LEVEL_3 = stringPreferencesKey("kecamatan")
-        private val LEVEL_2 = stringPreferencesKey("city")
-        private val LEVEL_1 = stringPreferencesKey("provinsi")
-        private val POSTAL_CODE = intPreferencesKey("postalCode")
+        private val FORMATTED_ADDRESS = stringPreferencesKey("formattedAddress")
 
         fun getInstance(dataStore: DataStore<Preferences>): DataPreference {
             return INSTANCE ?: synchronized(this) {

@@ -40,6 +40,7 @@ class AddActivity : AppCompatActivity() {
                     if (preferencesResponse.success == true) {
                         val preferences = preferencesResponse.preferences
                         val addressComponents = preferences?.addressComponents
+                        val formattedAddress = preferences?.formattedAddress
                         Log.d("AddActivity", "$addressComponents")
                         if (addressComponents != null) {
                             binding.etPreferenceAddress.setText(addressComponents.address ?: "")

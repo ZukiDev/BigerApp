@@ -16,6 +16,7 @@ import com.marzuki.bigerapp.view.ViewModelFactory
 import com.marzuki.bigerapp.view.main.DashboardActivity
 import com.marzuki.bigerapp.view.main.DashboardViewModel
 import com.marzuki.bigerapp.view.main.ui.add.AddActivity
+import com.marzuki.bigerapp.view.main.ui.recommendation.PreferencesBusinessActivity
 
 
 class HomeFragment : Fragment() {
@@ -51,8 +52,8 @@ class HomeFragment : Fragment() {
                 requireActivity().finish()
             }
 
-            binding.setLocation.setOnClickListener {
-                val intent = Intent(requireContext(), AddActivity::class.java)
+            binding.getRecom.setOnClickListener {
+                val intent = Intent(requireContext(), PreferencesBusinessActivity::class.java)
                 startActivity(intent)
                 requireActivity().finish()
             }

@@ -28,6 +28,7 @@
     <string name="district">District :</string>
     <string name="city">City/Regency :</string>
     <string name="province">Province :</string>
+    <string name="formatted_address">Formatted Address :</string>
     <string name="update_location">Update Location</string>
     <string name="login_successful">Login Successful</string>
     <string name="invalid_email_password">Invalid Email or Password</string>
@@ -52,4 +53,31 @@
     <string name="lets_go">Let\'s Go</string>
     <string name="welcome">Welcome !</string>
     <string name="welcome_text">Now you are a member of Biger,\nyou get recommendation businness,\nby your location.</string>
+    <string name="title_activity_preferences_business">PreferencesBusinessActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="select_price">Select Price</string>
+
+    <string-array name="price_options">
+        <item>MODERATE</item>
+        <item>EXPENSIVE</item>
+        <item>INEXPENSIVE</item>
+    </string-array>
+
+    <string name="select_rating">Select Rating</string>
+    <string name="generate_now">Generate Now</string>
+
+    <string-array name="rating_options">
+        <item>0.0</item>
+        <item>1.0</item>
+        <item>2.0</item>
+        <item>3.0</item>
+        <item>4.0</item>
+        <item>5.0</item>
+    </string-array>
+
 </resources>

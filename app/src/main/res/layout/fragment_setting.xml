@@ -200,12 +200,32 @@
                     android:layout_alignParentStart="true"
                     android:textStyle="bold"/>
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="@string/formatted_address"
+                    android:fontFamily="@font/regular"
+                    android:textSize="12sp"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:id="@+id/tvFormattedAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="@string/undefined"
+                    android:fontFamily="@font/regular"
+                    android:textSize="16sp"
+                    android:layout_alignParentStart="true"
+                    android:textStyle="bold"/>
+
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
 
         <Button
-            android:id="@+id/btnLogin"
+            android:id="@+id/btnUpdate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"

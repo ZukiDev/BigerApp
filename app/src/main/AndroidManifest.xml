@@ -18,6 +18,14 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
+            android:name=".view.main.ui.recommendation.GeneratedBusinessActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.main.ui.recommendation.PreferencesBusinessActivity"
+            android:exported="false"
+            android:label="@string/title_activity_preferences_business"
+            android:theme="@style/AppTheme" />
+        <activity
             android:name=".view.welcome.WelcomeActivity"
             android:exported="false" />
         <activity

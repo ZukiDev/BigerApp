@@ -51,7 +51,7 @@ interface ApiServicePost {
     @GET("preferences")
     suspend fun getUserPreferences(
         @Header("Authorization") token: String,
-        @Query("formatted") formatted: Boolean = false
+        @Query("formatted") formatted: String = "true"
     ): Response<GetUserPreferencesResponse>
 
     @Multipart
